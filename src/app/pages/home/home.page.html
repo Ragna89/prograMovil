@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="fondo_azul">
+    <ion-title class="ion-text-center" >Skeleton App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div>
+    
+    <h1 #titulo class="ion-text-center fuente">¡Bienvenido!</h1>
+
+    <ion-item>
+      <ion-label>Usuario</ion-label>
+      <ion-input placeholder="{{this.user}}" disabled=""></ion-input>
+    </ion-item>
+    
+    <h2 class="ion-text-center">Información Adicional</h2>
+    
+    <form (ngSubmit)="nombreApellido()">
+      <ion-item >
+        <label for="nombre">Nombre</label>
+        <input #name id="nombre" [(ngModel)]="nombre" name="nombre" label="Nombre" type="text" style="margin-left: 15px;">
+      </ion-item>
+
+      <ion-item>
+        <label for="apellido">Apellido</label>
+        <input #lastname id="apellido" [(ngModel)]="apellido" name="apellido" label="Apellido" type="text" style="margin-left: 15px;">
+      </ion-item>
+
+      <ion-item>
+        <ion-select label="Nivel Educacional" [(ngModel)]="nivel" name="nivel">
+          <ion-select-option *ngFor="let nivel of this.niveles" value="{{nivel}}">{{nivel}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <hr>
+
+      <ion-item>
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </ion-item>
+      
+  
+      <ion-button (click)="nombreApellido()" expand="block" type="submit">Mostrar</ion-button>
+      <ion-button (click)="limpiarAnimations()" expand="block" type="reset">Limpiar</ion-button>
+    </form>
+
+
+  </div>
+
+  
+</ion-content>

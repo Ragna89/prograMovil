@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="fondo_azul">
+    <ion-title class="ion-text-center" >Skeleton App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="margin_top">
+      
+      <h1 class="ion-text-center">Inicio de Sesión</h1>
+      
+      <br/>
+      <form (ngSubmit)="loginUser()">
+        <ion-item>
+          <ion-input id="user" [(ngModel)]="user" name="user" label="Usuario" minlength="3" maxlength="8" label-placement="floating" fill="outline" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input id="password" [(ngModel)]="password" name="password" label="Contraseña" maxlength="4" label-placement="floating" fill="outline" type="password"></ion-input>
+        </ion-item>
+    
+        <ion-button (click)="loginUser()" expand="block" type="submit">Ingresar</ion-button>
+
+      </form>
+    
+    <a [routerLink]=""><h6 class="ion-text-center">Crea tu cuenta gratis</h6></a>
+  
+  </div>
+
+
+
+</ion-content>
